@@ -1,0 +1,31 @@
+2026-03-10 16:41:44 - INFO - Starting live trading on binanceus BTC/USDT (testnet), 15m timeframe. PAPER_TRADING=True
+2026-03-10 16:45:00 - ERROR - Global error in live loop: binanceus GET https://testnet.binance.vision/api/v3/exchangeInfo 451  {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2026-03-10 16:48:53 - INFO - Starting live trading on binanceus BTC/USDT (testnet), 15m timeframe. PAPER_TRADING=True
+2026-03-10 16:49:17 - INFO - Starting live trading on binanceus BTC/USDT (testnet), 15m timeframe. PAPER_TRADING=True
+2026-03-10 16:56:10 - INFO - Starting live trading on binanceus BTC/USDT (testnet), 15m timeframe. PAPER_TRADING=True
+2026-03-10 17:00:00 - ERROR - Global error in live loop: binanceus GET https://testnet.binance.vision/api/v3/exchangeInfo 451  {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2026-03-10 17:09:32 - INFO - Starting live trading on binanceus BTC/USDT (testnet), 15m timeframe. PAPER_TRADING=True
+2026-03-10 17:09:54 - INFO - Starting live trading on binanceus BTC/USDT (testnet), 15m timeframe. PAPER_TRADING=True
+2026-03-10 17:10:22 - INFO - Starting live trading on binanceus BTC/USDT (testnet), 15m timeframe. PAPER_TRADING=True
+2026-03-10 17:14:25 - INFO - Starting live trading on binanceus BTC/USDT (testnet), 15m timeframe. PAPER_TRADING=True
+2026-03-10 17:24:11 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 14:36:38 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 14:52:11 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 15:12:57 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 15:34:21 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 15:35:46 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 15:44:53 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 15:58:56 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 15:59:32 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 16:00:00 - INFO - BUY signal | size=0.985962 | price=70574.89 | reason=Price <= lower Bollinger band AND RSI < oversold (mean-reversion long).
+2026-03-11 16:56:46 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 16:58:01 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 17:07:40 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 17:26:51 - INFO - Starting live trading on binanceus BTC/USDT, 15m timeframe. PAPER_TRADING=True
+2026-03-11 17:43:10 - INFO - Starting live trading on binanceus BTC/USDT. PAPER_TRADING=True
