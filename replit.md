@@ -1,6 +1,6 @@
-# RUBYBTC-Bot — Intelligence Advisor v3.0
+# RUBYBTC-Bot — Ledger Edition v4.0
 
-A Python-based cryptocurrency paper trading bot with a Mean Reversion + Bollinger Bands core strategy, enhanced by an Intelligence Advisor layer (Supertrend, Fear & Greed, recommendation engine).
+A Python-based cryptocurrency paper trading bot with a Mean Reversion + Bollinger Bands core strategy, enhanced by an Intelligence Advisor layer (Supertrend, Fear & Greed, recommendation engine), persistent paper trading ledger, and dynamic virtual wallet system.
 
 ## Project Structure
 
@@ -14,6 +14,17 @@ A Python-based cryptocurrency paper trading bot with a Mean Reversion + Bollinge
 - `data/BTCUSDT_15m.csv`, `data/ETHUSDT_15m.csv` — Historical data files
 - `live_trades.log` — Runtime trade log
 - `paper_trades.log` — Paper trade records
+- `ruby_performance.csv` — Persistent ledger: Timestamp, Asset, Price, Signal, Units_Recommended, Dollar_Value, Current_Virtual_Balance
+- `wallet.txt` — Persistent virtual balance; edit manually to adjust recommendation sizing
+
+## Ledger & Wallet System (v4.0)
+
+- **`wallet.txt`** — Stores the current virtual balance. Read on every (re)start so balance survives restarts. Edit the number manually (e.g., `120`) to change the sizing base.
+- **`ruby_performance.csv`** — Append-only CSV ledger written on every BUY and SELL signal. All writes use a `threading.Lock` to prevent file corruption.
+- **`load_wallet()` / `save_wallet()`** — Reads and writes `wallet.txt` with error handling.
+- **`log_trade_signal()`** — Creates headers on first run; appends rows thread-safely thereafter.
+- **Dynamic sizing** — `build_recommendation()` now takes `account_balance` as a live argument instead of a hardcoded constant. Changing `wallet.txt` to `120` scales all recommendations to `$120` base automatically.
+- **P&L Tracker** — Every Discord embed includes a "📈 Performance Tracker" block: Current Paper Wallet and Total Growth % vs the $100 starting baseline.
 
 ## Intelligence Advisor Layer (v3.0)
 
