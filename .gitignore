@@ -1,0 +1,45 @@
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ─── Virtual environments ─────────────────────────────────────────────────────
+.env
+.venv
+env/
+venv/
+.pythonlibs/
+
+# ─── Replit-specific (never commit these) ─────────────────────────────────────
+.cache/
+.upm/
+
+# ─── Secrets / credentials ────────────────────────────────────────────────────
+.env
+.env.*
+secrets.toml
+
+# ─── Runtime state (machine-specific, auto-recreated on startup) ──────────────
+wallet.txt
+ruby_performance.csv
+*.log
+
+# ─── Large data files ─────────────────────────────────────────────────────────
+data/*.csv
+equity_curve.csv
+
+# ─── Docker (not used on Replit) ──────────────────────────────────────────────
+Dockerfile
+docker-compose.yml
+
+# ─── OS clutter ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
