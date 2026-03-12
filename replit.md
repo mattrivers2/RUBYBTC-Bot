@@ -1,6 +1,6 @@
-# RUBYBTC-Bot
+# RUBYBTC-Bot — Intelligence Advisor v3.0
 
-A Python-based cryptocurrency paper trading bot that uses a Mean Reversion + Bollinger Bands strategy.
+A Python-based cryptocurrency paper trading bot with a Mean Reversion + Bollinger Bands core strategy, enhanced by an Intelligence Advisor layer (Supertrend, Fear & Greed, recommendation engine).
 
 ## Project Structure
 
@@ -15,11 +15,24 @@ A Python-based cryptocurrency paper trading bot that uses a Mean Reversion + Bol
 - `live_trades.log` — Runtime trade log
 - `paper_trades.log` — Paper trade records
 
+## Intelligence Advisor Layer (v3.0)
+
+- **Supertrend** — `pandas_ta.supertrend(length=10, multiplier=3.0)` on the live 15m dataframe. BULLISH if direction=1, BEARISH if direction=-1.
+- **Fear & Greed** — `get_sentiment()` calls `https://api.alternative.me/fng/`. Returns `value` (0-100) and `classification`. Fails gracefully to "Neutral" if the API is down.
+- **Recommendation Engine** — `build_recommendation()` calculates unit size:
+  - Base: RSI < 35 AND price < BB lower → 3.0 units
+  - +1.0 if Supertrend is BULLISH
+  - +1.3 if Fear & Greed < 25
+  - HOLD if no conditions met
+  - `ACCOUNT_BALANCE = 100`, `BASE_UNIT = 1.00` (1% of balance per unit)
+- **Discord embed** — Scan embeds now include a "💎 Ruby Executive Strategy" section with Recommendation, Conviction (🔥 scale), and a 2-line Analysis Summary.
+
 ## Dependencies
 
-- `ccxt==4.4.98` — Crypto exchange connectivity (pinned to this version; later 4.5.x versions have a broken dependency)
+- `ccxt==4.4.98` — Crypto exchange connectivity (pinned; 4.5.x has a broken lighter_client dependency)
 - `pandas==3.0.1` — Data manipulation
-- `requests==2.32.3` — HTTP for Discord/Telegram webhooks
+- `pandas_ta` — Technical indicators (Supertrend)
+- `requests==2.32.3` — HTTP for Discord/Telegram webhooks and Fear & Greed API
 - `python-dotenv==1.0.1` — Environment variable loading
 
 ## Environment Variables (Optional)
