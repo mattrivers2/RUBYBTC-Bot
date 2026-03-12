@@ -27,9 +27,8 @@ venv/
 secrets.toml
 
 # ─── Runtime state (machine-specific, auto-recreated on startup) ──────────────
-wallet.txt
-ruby_performance.csv
-*.log
+# Entire logs/data folder is private — balances, trade logs, performance CSV
+rubylogsdata/
 
 # ─── Large data files ─────────────────────────────────────────────────────────
 data/*.csv

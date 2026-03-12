@@ -22,10 +22,13 @@ from strategies.mean_reversion import (
 
 # ─── File Paths ────────────────────────────────────────────────────────────────
 BASE_DIR        = Path(__file__).resolve().parent.parent
-LOG_FILE        = BASE_DIR / "live_trades.log"
-PAPER_LOG_FILE  = BASE_DIR / "paper_trades.log"
-LEDGER_FILE     = BASE_DIR / "ruby_performance.csv"
-WALLET_FILE     = BASE_DIR / "wallet.txt"
+DATA_DIR        = BASE_DIR / "rubylogsdata"
+DATA_DIR.mkdir(parents=True, exist_ok=True)   # ensure folder always exists
+
+LOG_FILE        = DATA_DIR / "live_trades.log"
+PAPER_LOG_FILE  = DATA_DIR / "paper_trades.log"
+LEDGER_FILE     = DATA_DIR / "ruby_performance.csv"
+WALLET_FILE     = DATA_DIR / "wallet.txt"
 
 # ─── Thread-Safety ────────────────────────────────────────────────────────────
 _file_lock = threading.Lock()
