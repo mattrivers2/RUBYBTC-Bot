@@ -97,8 +97,16 @@ class RubyBot(discord.Client):
         if DISCORD_GUILD_ID:
             guild = discord.Object(id=DISCORD_GUILD_ID)
             self.tree.copy_global_to(guild=guild)
-            synced = await self.tree.sync(guild=guild)
-            print(f"✅ Discord: {len(synced)} commands synced to Guild {DISCORD_GUILD_ID} (instant)")
+            try:
+                synced = await self.tree.sync(guild=guild)
+                print(f"✅ Discord: {len(synced)} commands synced to Guild {DISCORD_GUILD_ID} (instant)")
+            except discord.errors.Forbidden:
+                print(
+                    "⚠️  Guild sync failed (403 Forbidden) — bot is not yet in the server.\n"
+                    "    Falling back to global sync (commands appear in ~1 hour after invite)."
+                )
+                synced = await self.tree.sync()
+                print(f"✅ Discord: {len(synced)} global commands queued.")
         else:
             synced = await self.tree.sync()
             print(f"✅ Discord: {len(synced)} global commands synced (Discord propagates in ~1h)")
